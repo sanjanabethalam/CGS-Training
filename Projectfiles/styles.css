@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: linear-gradient(45deg,skyblue,white);
+    color: #333;
+}
+
+.main-header {
+    background: #2e3b55;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.main-header h1 {
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-container h1 {
+    font-size: 20px;
+    color: #2e3b55;
+    margin-bottom: 10px;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #555;
+    font-weight: 600;
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+    font-weight: bold;
+    color: #444;
+}
+
+.login-container input,
+.login-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.button-container button {
+    flex: 1;
+    padding: 10px;
+    background: #4a76a8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.button-container button:hover {
+    background: #3b5c87;
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+.content h2 {
+    color: #2e3b55;
+    margin-bottom: 20px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #4a76a8;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.navigation a:hover {
+    border-bottom: 2px solid #4a76a8;
+}
+.d-flex
+{
+    padding-top: 30px;
+    padding: 80px;
+}
