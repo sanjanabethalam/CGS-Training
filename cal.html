@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        background-color:rgb(241, 231, 231);
+    }
+    .container{
+        width: 500px;
+        margin: 50px auto;
+        box-sizing: border-box;
+        border-radius: 20px;
+        
+    }
+    #display {
+        background-color: #413e3e;
+        color: white;
+        width: 95%;
+        height: 100px;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-align: right;
+        padding: 10px;
+        border-radius: 20px;
+    }
+    .col{
+        height: 90px;
+        font-size: 2rem;
+    }
+    .col .btn{
+        width: 100px;
+        height: 80px;
+        font-size: 2rem;
+        margin:0;
+        border-radius: 20px;
+    }
+    #equal{
+        width: 210px;
+        font-weight: 1000;
+    }
+</style>
+<body>
+    <div id="full screen"></div>
+    <div class="container bg-light p-4">
+        <div id="output container" class=""></div>
+        <textarea name="" id="display"></textarea>
+        <div class="d-flex"></div>
+        <div class="col">
+            <button class="btn btn-secondary" style="color: rgb(72, 241, 72);"><b>C</b></button>
+            <button class="btn btn-secondary">()</button>
+            <button class="btn btn-secondary">%</button>
+            <button class="btn btn-secondary" style="color:orange;"><b>/</b></button>
+        </div>
+        <div class="col">
+            <button class="btn btn-secondary">7</button>
+            <button class="btn btn-secondary">8</button>
+            <button class="btn btn-secondary">9</button>
+            <button class="btn btn-secondary" style="color:orange;"><b>*</b></button>
+        </div>
+        <div class="col">
+            <button class="btn btn-secondary">4</button>
+            <button class="btn btn-secondary">5</button>
+            <button class="btn btn-secondary">6</button>
+            <button class="btn btn-secondary" style="color:orange;"><b>-</b></button>
+        </div>
+        <div class="col">
+            <button class="btn btn-secondary">1</button>
+            <button class="btn btn-secondary">2</button>
+            <button class="btn btn-secondary">3</button>
+            <button class="btn btn-secondary" style="color:orange;"><b>+</b></button>
+        </div>
+        <div class="col">
+            <button class="btn btn-secondary">0</button>
+            <button class="btn btn-secondary">.</button>
+            <button class="btn btn-secondary" id="equal" style="color: rgb(72, 241, 72);"><b>=</b></button>
+            
+        </div>
+    </div>
+    <script src="cal.js"></script>
+</body>
+</html>
