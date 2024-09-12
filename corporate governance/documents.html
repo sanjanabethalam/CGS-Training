@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meetings</title>
+    <link rel="stylesheet" href="dashboard.css">
+    
+</head>
+<body>
+    <div class="sidebar">
+        <h2 style = "color : white">Dashboard</h2>
+        <ul>
+            <li><a href="Dashboard.html">Overview</a></li>
+            <li><a href="boardmembers.html">Board Members</a></li>
+            <li><a href="compilance.html">Compliance</a></li>
+            <li><a href="meetings.html">Meetings</a></li>
+            <li><a href="documents.html">Documents</a></li>
+            <li><a href="./riskmanagement.html">Risk Management</a></li>
+            <li><a href="./login.html">Logout</a></li>
+        </ul>
+
+    </div>
+     
+    <div class="main-content">
+        <header>
+            <h1 style="color: white;">Documents</h1>
+            <nav class="navbuttons">
+                <ul>
+                    <a href="home.html" style="color: white;">Home</a>
+                  
+                </ul>
+            </nav>
+                  
+        </header>
+        <div class="upload-section">
+            <h2>Upload Document</h2>
+            <form id="uploadForm" action="#" method="post" enctype="multipart/form-data">
+                <input type="file" id="fileInput" name="file" required>
+                <button type="submit" class="btn">Upload</button>
+            </form>
+        </div>
+
+        <div class="document-section">
+            <h2>Available Documents</h2>
+            <ul id="documentList">
+            
+                <li>
+                    <img src="file-icon.png" alt="Document Icon">
+                    <span>Document1.pdf</span>
+                    <button class="btn">Download</button>
+                </li>
+                <li>
+                    <img src="file-icon.png" alt="Document Icon">
+                    <span>Document2.docx</span>
+                    <button class="btn">Download</button>
+                </li>
+            
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

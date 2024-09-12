@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Governance Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+ 
+    <div class="sidebar">
+        <h2 style="color: white;">Dashboard</h2>
+        <ul>
+            <li><a href="./udashboard.html">Overview</a></li>
+            <li><a href="./uprofile.html">Profiles</a></li>
+            <li><a href="./ugroups.html">Groups</a></li>
+            <li><a href="./tasks.html">Tasks</a></li>
+            <li><a href="./schedule.html">Scheduling</a></li>
+            <li><a href="./login.html">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+      <header>
+        <div class="container">
+            <div class="logo"><h2 style="color: white;">Profile</h2></div>
+            <nav class="navbuttons">
+                <ul>
+                    <a href="home.html" style="color: white;">Home</a>
+                </ul>
+            </nav>
+        </div>
+      </header>
+
+      <div class="profiles">
+        <div id="profileCard" class="profile-card">
+            <div class="profile-header">
+                <img id="profileImg" src="empolyee1.webp" alt="Profile Image" class="profile-img">
+            </div>
+            <div class="profile-body">
+                <h2 id="userName"></h2>
+                <p id="userPosition"></p>
+                <p class="bio" id="userBio"></p>
+            </div>
+            <div class="profile-footer">
+                <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
+                <a href="#"><img src="email.png" alt="Email"></a>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+        if (loggedInUser) {
+            document.getElementById("userName").textContent = loggedInUser.name;
+            document.getElementById("userPosition").textContent = loggedInUser.position;
+            document.getElementById("userBio").textContent = loggedInUser.bio;
+        } else {
+            window.location.href = "login.html";
+        }
+    </script>
+
+</body>
+</html>
