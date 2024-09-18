@@ -1,0 +1,26 @@
+[
+    {
+      "email": "admin@democompany.com",
+      "password": "admin123",
+      "role": "admin",
+      "redirect": "dashboard.html"
+    },
+    {
+      "email": "user@democompany.com",
+      "password": "user123",
+      "role": "user",
+      "redirect": "udashboard.html"
+    },
+    {
+    "email": "Sanjana@gmail.com",
+    "password": "Sanju@123",
+    "role" : "user", 
+    "redirect" : "udashboard.html"},
+    {
+        "email" : "Neelima@gmail.com",
+        "password" : "Neelima@2003",
+        "role" : "user",
+        "redirect" : "udashboard.html"
+     }
+  ]
+  

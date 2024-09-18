@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Governance Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+ 
+    <div class="sidebar">
+        <h2 style="color: white;">Schedule</h2>
+        <ul>
+            <li><a href="./udashboard1.html">Overview</a></li>
+            <li><a href="./uprofile.html">Profiles</a></li>
+            <li><a href="./ugroups.html">Groups</a></li>
+            <li><a href="./tasks.html">Tasks</a></li>
+            <li><a href="./schedule.html">scheduling</a></li>
+            <li><a href="./login.html">Logout</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+      <header>
+        <div class="container">
+            <div class="logo"><h2 style="color: white;">Schedule</h2></div>
+            <nav class="navbuttons">
+                <ul>
+                    <a href="home.html" style="color: white;">Home</a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main></main>
+        <section class="agenda-tabs">
+            <div class="tab" id="tab1" onclick="openTab('tab1')">Upcoming</div>
+            <div class="tab" id="tab2" onclick="openTab('tab2')">Past</div>
+        </section>
+        <section class="agenda-content">
+            <div id="tab1-content" class="tab-content">
+                <h2>Upcoming Meetings</h2>
+                <ul class="agenda-list">
+                    <li class="agenda-item">
+                        <div class="agenda-header">
+                            <h3>Quarterly Review</h3>
+                            <span>September 20, 2024 | 10:00 AM</span>
+                        </div>
+                        <p>Description of the upcoming meeting, including agenda details and participants.</p>
+                    </li>
+                    <li class="agenda-item">
+                        <div class="agenda-header">
+                            <h3>Annual General Meeting</h3>
+                            <span>October 15, 2024 | 2:00 PM</span>
+                        </div>
+                        <p>Description of the upcoming meeting, including agenda details and participants.</p>
+                    </li>
+                </ul>
+            </div>
+            <div id="tab2-content" class="tab-content" style="display: none;">
+                <h2>Past Meetings</h2>
+                <ul class="agenda-list">
+                    <li class="agenda-item">
+                        <div class="agenda-header">
+                            <h3>Strategy Planning</h3>
+                            <span>August 10, 2024 | 1:00 PM</span>
+                        </div>
+                        <p>Description of the past meeting, including summary and outcomes.</p>
+                    </li>
+                    <li class="agenda-item">
+                        <div class="agenda-header">
+                            <h3>Budget Review</h3>
+                            <span>July 22, 2024 | 9:00 AM</span>
+                        </div>
+                        <p>Description of the past meeting, including summary and outcomes.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+   
+    <script>
+        function openTab(tabId) {
+            var tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(function(tab) {
+                tab.style.display = 'none';
+            });
+            document.getElementById(tabId + '-content').style.display = 'block';
+        }
+    </script>
+    </div>
+</body>
+</html>

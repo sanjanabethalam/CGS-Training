@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Background Color</title>
+    
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            transition: background-color 0.5s ease;
+        }
+        .color-picker-container {
+            margin-top: 250px;
+            text-align: center;
+        }
+        .color-picker-label {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body class="text-center">
+    
+    
+    <div class="container">
+        <div class="row justify-content-center color-picker-container">
+            <div class="col-md-5">
+                <h2>Choose a Background Color</h2>
+                <p>Select a color to change the background of this webpage.</p>
+                
+                
+                <div class="form-group">
+                    <label for="colorPicker" class="color-picker-label">Pick Color:</label>
+                    <input type="color" id="colorPicker" class="form-control" value="#ffffff">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        const colorPicker = document.getElementById('colorPicker');
+
+        
+        document.body.style.backgroundColor = colorPicker.value;
+
+        
+        colorPicker.addEventListener('input', function() {
+            document.body.style.backgroundColor = this.value;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+       
+        .card{
+        border: none;
+        border-radius: 10px;
+        text-align: center;
+        padding: 20px;
+        margin: 10px;
+        }
+        .bjp{
+        background-color: bisque;
+        }
+        .janasena{
+            background-color: bisque;
+           
+        }
+        .congress{
+            background-color: bisque;
+        }
+        .ysr{
+            background-color: bisque;
+        }
+        .textcenter{
+            color: greenyellow;
+            border-radius: 100px;
+        }
+       
+    </style>
+</head>
+<body style="background-color: rgb(229, 243, 243);">
+  
+        <div class="row">
+            <div class="col-3">
+                <div class="card bjp">
+                    <h5>BJP PARTY</h5>
+                    <img src="bjplogo.jpeg" alt=""  style="height: 300px;">
+                    <h5 id="s1">0</h5>
+                    <button id="btn1" ds="s1" class="btn btn-primary mt-3">Vote</button>
+                </div>
+
+            </div>
+            <div class="col-3">
+                <div class="card janasena">
+                    <h5>JANASENA PARTY</h5>
+                    <img src="janasenalogo.jpeg" alt=""  style="height: 300px;">
+                    <h5 id="s2">0</h5>
+                    <button id="btn2" ds="s2" class="btn btn-primary mt-3">Vote</button>
+                </div>
+
+            </div>
+            <div class="col-3">
+                <div class="card congress">
+                    <h5>CONGRESS PARTY</h5>
+                    <img src="congresslogo.png" alt=""  style="height: 300px;">
+                    <h2 id="s3">0</h2>
+                    <button id="btn3" ds="s3" class="btn btn-primary mt-3">Vote</button>
+                </div>
+        </div>
+        <div class="col-3">
+            <div class="card YSR congress">
+                <h5>YSR CONGRESS PARTY</h5>
+                <img src="ysrlogo.jpeg" alt="" style="height: 300px;">
+                <h2 id="s4">0</h2>
+                <button id="btn4" ds="s4" class="btn btn-primary mt-3">Vote</button>
+            </div>
+           
+
+        </div>
+        </div>
+        <hr>
+        <div class=" text-center">
+            <button class="btn btn-success btn-submit mt-4" onclick="endgame()">Final Submit </button>
+
+        
+       </div>
+   <script src="election.js"></script>
+
+</body>
+</html>

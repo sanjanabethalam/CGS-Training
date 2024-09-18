@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Demo Company</title>
+    <link rel="stylesheet" href="Homepage.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">Corporate Governance</div>
+            <nav class="navbuttons">
+                <ul>
+                    <li><a href="Homepage.html">Home</a></li>
+                    <li><a href="Register.html">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="header-image" style="text-align: center;">
+        <img src="login logo.jpeg" alt="Header Image">
+    </div>
+
+    <section class="form-section">
+        <div class="container">
+            <h2 style="color: black">Login as Admin</h2>
+            <form id="loginForm">
+                <input type="email" id="loginEmail" name="email" placeholder="Email" required>
+                <input type="password" id="loginPassword" name="password" placeholder="Password" required>
+    
+                <div class="btn-container">
+                    <button type="button" class="btn"><a href="Login.html">Login as User</a></button>
+                    <button type="submit" class="btn">Login as Admin</button>
+                </div>
+    
+                <p>Don't have an account? <a href="Register.html">Register here</a></p>
+            </form>
+            <p id="error-message" style="color: red;"></p>
+        </div>
+    </section>
+
+    <script>
+        const userData = [
+            { "email": "admin@democompany.com", "password": "admin123", "role": "admin", "redirect": "dashboard.html", "name": "John Doe", "position": "Chief Executive Officer", "bio": "John has 20+ years of experience in corporate governance." }
+            
+        ];
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const email = document.getElementById("loginEmail").value;
+            const password = document.getElementById("loginPassword").value;
+            const user = userData.find(user => user.email === email && user.password === password);
+
+            if (user) {
+                localStorage.setItem("loggedInUser", JSON.stringify(user));
+
+            
+                window.location.href = user.redirect;
+            } else {
+                document.getElementById("error-message").textContent = "Invalid email or password.";
+            }
+        });
+    </script>
+
+</body>
+</html>
