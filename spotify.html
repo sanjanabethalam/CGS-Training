@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify Clone</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         body {
@@ -14,7 +13,7 @@
             color: #fff;
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
-        
+
         h1 {
             color: #4aa807;
             display: flex;
@@ -27,6 +26,39 @@
             color: #1DB954;
         }
 
+        .container-fluid {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #313131;
+            padding: 15px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar a:hover {
+            background-color: #87faaf;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            width: calc(100% - 250px);
+        }
+
         .search-container {
             position: relative;
             width: 50%;
@@ -37,7 +69,7 @@
             background-color: #e24343;
             color: #fff;
             border: 1px solid #1DB954;
-            border-radius: 40px; 
+            border-radius: 40px;
             padding: 10px 40px 10px 20px;
             width: 100%;
             display: block;
@@ -50,7 +82,7 @@
             transform: translateY(-50%);
             color: #fff;
         }
-        
+
         .card {
             background-color: #87faaf;
             border: none;
@@ -60,13 +92,13 @@
             flex-direction: column;
             align-items: center;
             padding: 20px;
-            margin-bottom: 20px; /* Space between cards */
+            margin-bottom: 10px;
         }
-        
+
         .card-title {
             color: #f85223;
             text-align: center;
-            margin: 10px 0; /* Margin for spacing */
+            margin: 10px 0;
         }
 
         .album-img {
@@ -74,7 +106,7 @@
             height: 200px;
             object-fit: cover;
             border-radius: 30px;
-            margin-bottom: 15px; /* Space below image */
+            margin-bottom: 15px;
         }
 
         .card-body {
@@ -84,26 +116,38 @@
             text-align: center;
             width: 100%;
         }
-        
+
         .audio-player {
             width: 100%;
             margin-top: 10px;
         }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <header class="text-center my-4">
-            <h1>
-                <i class="fab fa-spotify"></i>
-                <b>Spotify Clone</b>
-            </h1>
-            <div class="search-container">
-                <input type="text" id="search" class="form-control" placeholder="Search for a song, artist, or album">
-                <i class="fas fa-search"></i>
-            </div>
-        </header>
-        <div class="row" id="results"></div>
+    <div class="container-fluid">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Spotify Clone</h2>
+            <a href="#"><i class="fas fa-home"></i> Home</a>
+            <a href="#"><i class="fas fa-search"></i> Search</a>
+            <a href="#"><i class="fas fa-music"></i> Your Library</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header class="text-center my-4">
+                <h1>
+                    <i class="fab fa-spotify"></i>
+                    <b>Spotify Clone</b>
+                </h1>
+                <div class="search-container">
+                    <input type="text" id="search" class="form-control" placeholder="Search for a song, artist, or album">
+                    <i class="fas fa-search"></i>
+                </div>
+            </header>
+            <div class="row" id="results"></div>
+        </div>
     </div>
 
     <script>
@@ -141,7 +185,7 @@
             tracks.forEach(track => {
                 const trackHtml = `
                     <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
+                        <div class="card mb-1 p-4 shadow-sm">
                             <img src="${track.album.images[0].url}" class="album-img" alt="${track.name}">
                             <div class="card-body">
                                 <h5 class="card-title">${track.name}</h5>
@@ -155,6 +199,20 @@
                     </div>
                 `;
                 resultsDiv.innerHTML += trackHtml;
+            });
+            attachAudioListeners();
+        }
+
+        function attachAudioListeners() {
+            const audioPlayers = document.querySelectorAll('.audio-player');
+            audioPlayers.forEach(audio => {
+                audio.addEventListener('play', () => {
+                    audioPlayers.forEach(otherAudio => {
+                        if (otherAudio !== audio) {
+                            otherAudio.pause();
+                        }
+                    });
+                });
             });
         }
 
@@ -170,4 +228,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
